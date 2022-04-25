@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<meta charset="UTF-8">
+			  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>Mind Mining</title>
+				<style>
+								body{
+												margin:0;
+												padding:0;									 
+										  background:radial-gradient(circle farthest-corner at -98% -50% ,dodgerblue,silver,#f7e257,dodgerblue,#21302f,black);
+								}
+					*{
+									
+								box-sizing:border-box;
+								font-family:Arial,sans-serif;
+					}
+				
+					#close{
+								
+									display:none;
+					}	
+					#start{
+					    margin-top:2em;
+								 border-top-left-radius:50px;
+								 height:100vh;
+							 	width :100vw;
+									display:none;
+							 background: radial-gradient(circle farthest-corner at -98% -50% ,lime,yellow, orange,#374f4d,#21302f,black);
+									overflow:auto;
+									box-shadow:0px 1.5px 30px rgba(0,0,0,1);
+									
+					}		
+			
+					
+					@keyframes well{
+									
+									0%{transform:rotate(-15deg);}
+									100%{transform: rotate(15deg);}
+					}
+					
+			
+						
+					
+	
+				.closebox{
+				    margin-top:2em;
+				    border-top-left-radius:50px;
+				    height:100vh;
+				    width:100vw;
+								display:flex;
+							 flex-wrap:wrap;
+								justify-content:top;
+								align-items:center;
+								padding:12px;
+								background:radial-gradient(circle farthest-corner at -40% 0% ,green, orange,#374f4d,#21302f,black);
+								overflow:auto;
+								box-shadow:0px 1.5px 30px rgba(0,0,0,1);
+								
+								
+				}
+				
+				.ensec2{
+		      
+								padding:1em;
+								margin:1em;
+							border-radius:8px;
+								
+								}
+								
+				
+				.buty{
+								
+								height:70px;
+								width:200px;
+								margin:1em 12px 12px 12px;
+								border-radius:50px;
+								font-size:20px;
+								font-weight:bold;
+								color:black;
+								border:solid 0px cyan;
+								background:#f7e257;
+							
+				}
+				.buty:active{
+								
+								transform:scale(0.9);
+								
+								
+				}
+				#inputid{
+								
+								height:150px;
+								width:150px;
+								padding:12px;
+								border-radius:50%;
+								border:none;
+								font-size:75px;
+								font-weight:bolder;
+								outline:none;
+								text-align:center;
+								background:white;
+								color: cyan;
+								background:linear-gradient(180deg,#374f4d,#21302f);
+								box-shadow:0px 1.5px 50px #262626;
+						
+				}
+				#inputid:hover{
+								border:solid 4px dodgerblue;
+				}
+				.upsection{
+							
+							display:flex;
+							flex-direction:column;
+							justify-content: space-evenly;
+							align-items:center;
+							font-weight:bolder;							
+							
+							border-radius:8px;
+							
+				}
+			.upsection div{
+			height:100px;
+			width:100px;
+			border-radius:8px;
+			padding:1em;
+			margin:0.5em;
+		 color: white;
+		 border-bottom:solid 2px dodgerblue;
+		 
+					}
+			.hintsbox{    			    			   
+							height:150px;
+							width:200px;
+							display:flex;
+							flex-direction:column;
+							justify-content:center;
+							align-items:center;
+							padding:12px;
+						 border-radius:8px;
+						 margin-bottom:12px;
+							Color:white;
+						
+							
+			}
+			
+			
+			
+		
+			.totscore{
+			    display:flex;
+			    flex-wrap:wrap;
+			    justify-content:center;
+			    align-items:center;
+						 
+							
+			}
+	 .totscore div{
+	     display:flex;
+	     flex-direction:column;
+	     justify-content:center;
+	     padding:1em;
+	     align-items:left;
+	     width:300px;
+	     height:200px;
+	 				margin:8px 8px 8px 8px;
+	 				border-radius:8px;
+	 				color: aqua;
+	 				border-bottom:solid 6px dodgerblue ;
+	 				background:#262926;
+						box-shadow:0px 1.5px 50px #262626;
+	 				font-weight:bold;
+	 				
+	 }
+	 .totscore div:hover{
+	 				background:radial-gradient(circle farthest-corner at 0% 0%,orange,#374f4d,#374f4d,#374f4d);
+					
+	 				font-weight:bold;
+	 				border-bottom:solid 6px orange;
+	 }
+	 
+	 .scoretxt{
+	     
+	 				
+	 				font-size:24px;
+	 				font-weight:bolder;
+	 				overflow:auto;
+	 				background: -webkit-linear-gradient(60deg, #fccb90 0%, #d57eeb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+	 }
+	 .scoretxt a{
+	 				text-decoration:none;
+	 				color: dodgerblue;
+	 				border:solid 1px orange;
+	 			
+	 }
+	 .autobutton{
+	 
+	 
+	 		display:flex;
+	 		flex-direction: column;
+	 		justify-content:center;
+	 		align-items:center;
+	 		margin:12px;
+	 	
+	 				
+	 }
+	
+	#rangein{
+					
+					color:dodgerblue;
+	}
+.infox{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items:center;
+  width:200px;
+  margin-top:1em;
+		
+}
+
+.tiup{
+				
+				font-weight:bolder;
+				background: -webkit-linear-gradient(270deg,#92fe9d 0%, #00c9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:45px;
+} 
+.chgoal{
+				display:flex;
+				flex-wrap:wrap;
+				justify-content:space-between;
+				
+}
+.anclink{
+				
+			border-bottom:solid 1px orange;
+			padding:8px;
+}
+.buty a{
+				
+				text-decoration: none;
+				color: black;
+}
+.letxt{
+				color:grey;
+				border-left:solid 4px orange;
+				padding-left:8px;
+}
+.upflex{
+   
+   margin:0.5em;
+			display:flex;
+   flex-wrap:wrap;
+			justify-content: space-evenly;
+		 align-items:center;
+			border-radius:8px;
+			padding:0.5em;
+			
+			
+}
+.entryflex{
+    height:100vh;
+    width:100%;
+			 background: radial-gradient(circle farthest-corner at -98% -50% ,lime,yellow, rgba(255,140,0,0.4),#374f4d,#21302f,black);
+    overflow:auto;				
+    }
+    
+  .enflexy{
+  				
+  	display:flex;
+				flex-wrap:wrap;
+			 justify-content: space-evenly;
+			
+  				
+  } 
+   
+.discounted{
+				
+background: -webkit-linear-gradient(45deg, orange, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;			
+
+border-bottom:solid 1px orange;
+padding-bottom:2px;
+} 
+.ensec1{
+			    height:auto;   
+		     width:300px;
+								padding:1em;
+								margin:0.5em;
+							 color:white;
+							 font-weight:bold;
+}
+.ensec1 h1{
+							background:linear-gradient(70deg,#f7e257,silver,dodgerblue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:45px;
+  
+			}
+			#revue-embed{
+							
+							display:flex;
+						 flex-wrap:wrap;
+							justify-content:center;
+							align-items:center;
+							padding:1em;
+							color:white;
+							background:rgba(55, 79, 77,0.5);
+							
+			}
+#revue-embed div{
+			display:flex;
+			flex-direction: column;
+			justify-content:space-between;
+			align-items:center;
+			height:150px;
+			width:300px;
+			padding:1em;
+			border-radius:8px;
+			margin:1em;
+			overflow:auto;
+			background:rgb(255,255,255);
+			color:black;
+			
+				
+}
+.revue-form-group input{
+				height:55px;
+				width:170px;
+				border:none;
+				border-bottom:solid 4px #f7e257;
+				outline:none;
+				padding:12px;
+}
+.signuptosee{
+
+				display:none;
+			 
+}
+.stopthem{
+				display:none;
+				height:100vh;
+				width:100%;
+			 overflow:auto;
+}
+
+.shareboxy{
+				display:flex;
+				flex-wrap:wrap;
+				justify-content:space-evenly;
+				align-items:center;
+				padding:1em;
+			
+}
+.shareboxy div{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    align-items:center;
+				height:auto;
+				width:300px;
+		  color:white;
+	 	 border-radius:8px;
+	   margin:0.5em;
+	   padding:1em;
+	   background: radial-gradient(circle farthest-corner at -98% -50% ,lime,yellow, orange,#374f4d,#21302f,black);
+	   box-shadow:0px 1.5px 50px #262626;
+	   font-weight:bold;
+}
+
+.shared10 a{
+	
+	padding:1em;
+	background:#f7e257;
+ border-radius:50px;
+ text-decoration:none;
+ color:black;
+}
+#phex{
+				width:200px;
+				border:solid 1px dodgerblue;
+				padding:8px;
+				color:white;
+				background:none;
+				outline:none;
+}
+			
+.hrbet{
+				color:#f7e257;
+				
+}
+
+.ensec4 {
+width:300px;
+padding:2em;
+color:cyan;
+margin:1em;
+border-radius:8px;
+box-shadow:0px 1.5px 50px #262626;
+background:radial-gradient(circle farthest-corner at -98% -50% ,lime,yellow, rgba(255,140,0,0.4),#374f4d,#21302f,black);		
+}
+.enopt{
+display:flex;
+flex-direction: column;
+justify-content:center;
+align-items:center;
+				height:40px;
+				width:40px;
+				border-radius:50%;
+				background:#f7e257;
+				color:black;
+				font-weight:bold;
+}
+#winman{
+  
+			 
+				
+				border-radius:8px;
+				color: #f7e257;
+				overflow:auto;
+				
+}
+
+#winmanname{
+				
+				color:white;
+				font-weight:bold;
+}
+#actplay{
+			color:white;
+			font-size:42px;
+			font-weight:bold;	
+			background: -webkit-linear-gradient(12deg,#f7e257,dodgerblue,silver);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;		
+				
+}
+.wincard{
+     
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:left;
+    height:150px;
+				width:300px;
+				position:relative;
+			 padding:1em;
+			 background:#262626;
+				border-radius:50px;
+				border-top-right-radius:8px;
+			 z-index:12;
+			 
+}
+.livepoint{
+display:inline;
+				height:30px;
+				width:100px;
+				padding:8px;
+				font-weight:bold;
+				color:cyan;
+				
+}
+
+.panball{
+			display:flex;
+			flex-direction:row;
+		 justify-content: space-evenly;
+		 align-items:center;
+}
+.panball span{
+				height:10px;
+				width:10px;
+				border-radius:50%;
+				background:#262626;
+				margin:12px;
+				animation:downup 1s ease-in infinite alternate;
+}
+
+#goodsname{
+    
+				color:white;
+				border-radius:8px;
+				padding:8px;
+				background: dodgerblue;
+   
+    
+}
+#goodlinks{
+				
+				position:relative;
+			
+				animation:shakeit 0.5s 1s ease infinite alternate;
+} 
+
+@keyframes zoop{
+				0%{transform: translateY(30%) ; opacity: 0.5;}
+				100%{transform: translateY(0%); opacity: 1;}
+}
+@keyframes downup{
+				0%{transform: translateY(0%) scale(0.9); opacity: 0.8;}
+				100%{transform: translateY(-20%) scale(1); opacity: 1;}
+}
+@keyframes shakeit{
+				0%{ transform:rotate(-5deg);}
+				100%{transform:rotate(5deg);}
+}
+
+				</style>
+</head>
+<body class="cssgrad">
+				<div id="entrypg">
+								<div class="entryflex">
+									<div class="enflexy">   
+									<div class="ensec1"><div>	
+													<h1>Welcome!</h1>
+													<h2>In the World of Mind Mining</h>
+								</div>
+								<div>
+								 				<p>Are you Ready !</p>
+								 				<small>Get Rewarded for Mining Numbers 💰</small>
+								 					 <button onclick="getstart()" class="buty">Play Now</button>	
+								 					 </div>
+								 					 </div>
+								 					 
+								 					   <div class="ensec2">
+								 					       <div>
+								 				    
+								 			    <div class="wincard">
+<p><span id="winmanname"></span> <span id="emojiforu"></span></p>
+								 				  <p id="winman"></p>
+								 				  </div>
+								 				
+								 					 								</div>
+								 					 								</div>
+								 					 								
+								 					 <div class="ensec2">
+								 					 				
+								 					 				<div class="ensec4">
+								 					 						
+								 					 				  <h2>Active Players</h2>
+								 					 					<p><span class="livepoint">🔴Live| mining Numbers</span><p id="actplay"></p>
+								 					 						</p>	
+								 					 								</div>
+								 					      </div>
+								 					      
+								 					   
+								 					 				
+						   <div class="ensec2">
+						   		<div class="ensec4">	
+										<h2>Win Amazing Prizes 🎁</h2>
+										<p>💰 Tiny Bitcoin </p>
+										<p>🛍️ Shopping Discounts</p>	
+										<p>💳 Magazine Subscriptions</p>
+										</div>		
+								</div>				
+							
+								 			   	<div class="ensec2">
+								 						<div class="ensec4">
+								 										<p class="enopt">1</p>
+								 										<p>You have to <b> guess z </b> number.</p></div></div>
+								 										
+								 							<div class="ensec2">
+								 											<div class="ensec4">
+<p class="enopt">2</p>	<p><b> z is any number</b> between specified range.</p></div></div>
+								 							
+								 						<div class="ensec2">	<div class="ensec4"><p class="enopt">3</p><p>use <b> Logical Hints, </b>  eg : "number is less than or Greater than"</p></div></div>
+								 						
+								 							<div class="ensec2"><div class="ensec4"><p class="enopt">4</p><p>keep note of <b> Numbers Range ,</b> eg: "1 to 10"</p></div></div>
+								 							
+								 					<div class="ensec2">	<div class="ensec4"><p class="enopt">5</p><p>If you want mine numbers automatically ,take help of <b> Auto miner </b></p></div>	</div>
+								 							
+								 				
+								 				</div>
+								 				</div>
+								 				
+								 				</div>
+								</div>
+				</div>
+				<div>
+				<div id="start">
+			
+			<div class="upflex">
+			<div class="upsection">
+							
+    <div>
+    				<p>Timer⌛</p>
+    			 <p id="timer"></p>
+    	</div>
+		  <div class="mined">
+		  			<p>Mined💰</p>
+		  	  <p id="scoress">0</p>
+		  	 </div>
+		  	 <div>
+		  	 				<p>Goal🔥</p>
+		  	 				<p id="goalmine">200</p>
+		  	 </div>
+		  </div>
+		  
+		  <div class="inputcard">
+				<div class="infox">
+				
+						<div class="hintsbox">	
+							<div class="panball">
+					  <span id="panball1"></span>
+					  <span id="panball2"></span>
+					  <span id="panball3"></span>
+							</div>
+							<div><p><strong id="hints">Start Entering number</strong></p></div>
+							
+							<div> <p>Range : <strong id="rangein"></strong></p></div>
+							
+							</div>	
+				
+				
+				<div class="inboxi"><input type="number" id="inputid" oninput="guessnow()" placeholder="0" ></div>
+		 
+			 	</div> 				
+				</div> 
+				
+				<div class="autobutton">		
+	<div>
+		<button onclick="automine()" class="buty">Auto mine</button>
+				</div></div>
+				
+				</div>
+				</div>
+				</div>
+				</div>
+				</div>
+				
+				<div id="close">
+				<div class="closebox">			
+								
+				   
+								
+								<div class="totscore">
+								<div>
+												<h2 class="tiup">Congrats!</h2>
+								    <p>Dashcode : 101010</p>
+							 </div>
+							 <div>
+							 				<p>Golden Words</p>
+							 				<p class="scoretxt" id="feedgiv"></p>
+							 </div>
+							 		<div class="offered">
+							 			<p id="goodsname">You Got Big Discount %</p>
+							 			
+							 			<p><button id="goodlinks" class="buty"></button></p>
+							</div>
+							<div class="offered">
+							 			<p>You Won Free Subscription of Todays Q Magazine. <span class="discounted"><b>Save $57</b></span></p>
+	<p>
+<button class="buty" onclick="getsubscribed()">Claim Reward</button>
+</p>
+							</div>
+								<div>
+								<p>Total Mined Numbers</p>
+						  <p class="scoretxt" id="scored">0</p>
+								</div>
+								
+								  		<div>
+			   <button onclick="showgame()" class="buty">Play Again</button>
+							 <button onclick="gohome()" class="buty">Home</button>
+				</div>
+								<div>
+									<p>Points Earned</p>
+									<p class="scoretxt" id="finalscore">0</p>
+								</div>
+								<div>
+								<p>Bonus points</p>
+								<p class="scoretxt" id="bonuspoints">0</p>
+								</div>
+								<div>
+										<p>Total Points</p>
+										<p class="scoretxt" id="totpoints">0</p>
+								</div>
+								<div>
+									<p>Mining Performance </p>
+									<p class="scoretxt" id="minper">0</p>
+								</div>
+								<div>
+									<p>Miner Medal</p>
+									<p class="scoretxt" id="minerrank">Not received</p>
+								</div>
+								<div>
+										<p>Logic Intensity</p>
+										<p class="scoretxt" id="rpop">0</p>
+								</div>
+								<div>
+											<p>Challenge Status</p>
+											<p id="chstat" class="scoretxt">Oops! Challenge not fullfilled</p>
+							</div>
+							<div class="chgoal">
+											<p>
+											<p>Goal</p>
+											<p id="chal">0</p>
+											</p>
+											<p>
+											<p>You mined</p>
+											<p id="minednum">0</p>
+											</p>
+							</div>
+							 <div>
+							 			<p>Earning in INR</p>
+							 			<p class="scoretxt" id="bitearn">0</p>
+							 </div>
+							  <div>
+							 			<p>Earning in USD</p>
+							 			<p class="scoretxt" id="coinearn">0</p>
+							 </div>
+							 <div>
+							 		<p>Earning in USD</p>
+							 			<p class="scoretxt" id="usdbtc">0</p>		
+							 </div>
+			
+							<div>
+											<p> Can I withdraw money</p>
+											<p class="letxt"> Yes ! Your money get transferred into discount,If You are lucky you get special discount (%) on purchasing goods.<a href="https://amazon.in/shop/todaysq">Shop on amazon</a> </p>
+							</div>
+							<div>
+											<p>What is miner medal</p>
+											<p class="letxt">Miner medal Gives you extra bonus </p>
+							</div>
+							<div>
+											<p>What is logic intensity</p>
+											<p class="letxt">Logic intensity depends on How fast you mined numbers in particular time period.</p>
+							</div>
+							<div>
+											<p>What is top medal</p>
+											<p class="letxt">Diamond is the top and last medal </p>
+							</div>
+							<div>
+											<p>What is auto mining</p>
+											<p class="letxt">Computer Algorithm mine the numbers automatically. in crpyto mining You have to use algorithm for mining hash.</p>
+							</div>
+							<div>
+							 			<p>Challenge Your Friend/ Share Your scoreboard</p>
+							 			<p class="shared10"></p>
+							</div>
+							<div>
+			   <button onclick="showgame()" class="buty">Play Again</button>
+							 <button onclick="gohome()" class="buty">Home</button>
+				</div>
+							</div>
+					
+					
+	
+   </div>
+		</div>
+
+<div class="signuptosee">
+				
+	<div id="revue-embed">
+					<h2>Congrats! You Won Today's Q Magazine subscription for <strike> $57 </strike> Now Free $0.</h2>
+					<p>After Complete subscription You get monthly/weekly e-magazine copy through your email.<b>Enjoy Free Reading ! subscribe now.</b></p>
+					
+  <form action="https://www.getrevue.co/profile/todaysqmagazine/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank">
+  <div class="revue-form-group">
+    <label for="member_email">Email address</label>
+    <input class="revue-form-field" placeholder="Your email address..." type="email" name="member[email]" id="member_email">
+  </div>
+  <div class="revue-form-group">
+    <label for="member_first_name">First name <span class="optional">(Optional)</span></label>
+    <input class="revue-form-field" placeholder="First name... (Optional)" type="text" name="member[first_name]" id="member_first_name">
+  </div>
+  <div class="revue-form-group">
+    <label for="member_last_name">Last name <span class="optional">(Optional)</span></label>
+    <input class="revue-form-field" placeholder="Last name... (Optional)" type="text" name="member[last_name]" id="member_last_name">
+  </div>
+  
+  <p class="revue-form-actions">
+    <input type="submit" class="buty" value="Subscribe" name="member[subscribe]" id="member_submit">
+  </p>
+  <p><button onclick="aftersub()" class="buty">Back</button></p>
+  <p class="revue-form-footer">By subscribing, you agree with Revue’s <a target="_blank" href="https://www.getrevue.co/terms">Terms of Service</a> and <a target="_blank" href="https://www.getrevue.co/privacy">Privacy Policy</a>.</p>
+
+  </form>
+</div>
+				
+</div>
+<div>
+				
+<div class="stopthem">
+<div class="shareboxy">
+	<div>
+	<h2>Time Up !</h2>
+	<p>To see your Winning Prizes and Score, Unlock 🔓 the Dashboard.</p>
+		<p>Enter Dashcode </p>
+	<input type="password" id="phex" placeholder="Enter Dashcode" oninput="dashed ()"> 
+	<p><small><i>When you Enter code it matches automatically | You get dashcode on scoreboard</i></small></p>
+	<p class="hrbet">Or Share This Game on WhatsApp</p>
+	<p><small><i>*minimum 10 shares required.</i></small></p>
+	<p><strong>Shares : </strong> <span id="sharesum" >0 </span> out of 10</p>
+		<p class="shared10" onclick="gotohead()">	
+	</p>
+	<progress class="sharecount" value="0" max="10"></progress>
+	</div>	
+	<div class="share10card">
+		
+<p>When you Share this game with Your 10 Friends or Groups, on WhatsApp. You will see following details.</p>
+		<ul>
+						
+						<li>Prizes You Won </li>
+						<li>Your Score Dashboard</li>
+						<li>Earning in INR,USD & BTC</li>
+						<li>Logical Intensity</li>
+						<li>Dashcode</li>
+						
+		</ul>
+		</div>
+		
+</div>
+</div>	
+				
+				<script>
+var bonused = 0;
+var totalpoints =0;
+var minperform = 0;
+var auto =0;
+var count=0;
+var minrank="Gold"; 
+var rpop = "1x fast";
+var bitcoin = 0;
+var score=0;
+var rand = 20; 
+var scoregot=guessnow();
+var randmile;
+
+var elem = document.documentElement;
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  }
+  }
+
+for(i=0;i<=1;i++){
+var shared10 = document.getElementsByClassName("shared10");
+var newan = document.createElement("a");
+newan.setAttribute("data-action","share/whatsapp/share");
+var hrlink = document.createTextNode("Share on WhatsApp");
+newan.appendChild(hrlink);
+shared10[i].appendChild(newan);
+}
+var autostart= setInterval(guessnow,100);
+
+        function stopautomine(){
+        
+        				auto=0;
+        				clearInterval(autostart);
+        			
+        				
+        }
+
+        function automine(){
+        var butauto=document.getElementsByClassName("buty")[0];
+        butauto.innerHTML="Mining";
+           auto=1;
+          setInterval(guessnow,100)
+         	
+        }
+        function gohome(){
+        			var timeuppage = document.getElementById("close");
+							 timeuppage.style.display="none"; 	
+        			var enpage = document.getElementById("entrypg");
+												enpage.style.display="block";	
+												
+        				
+        }
+       
+								function getstart(){
+												setTimeout(closeup,10000);
+										  
+												var guesspage = document.getElementById("start");
+												start.style.display="block";
+												var enpage = document.getElementById("entrypg");
+												enpage.style.display="none";
+												score=0;
+												time=30;
+	 
+		openFullscreen();
+
+								}
+							
+							function closeup(){
+							stopautomine();
+										var startpage= 	document.getElementById("start");
+										startpage.style.display="none";
+										var closepage=document.getElementsByClassName("stopthem")[0];
+										closepage.style.display="block";
+										
+									  time=30;
+	var linkin ="whatsapp://send?text=Hi, I am sharing with you a logical Mind Mining game, Help you to develop your logical skills........Here is my performance....            |Mined Numbers : "+ score+" | Point Earned :"+totalpoints+"| Miner Performance :"+minperform+" | Miner Medal :"+minrank+" | Logical Intensity:"+rpop+"| awesome ! play now. Learn how cryptocurrency mining works. You can Automate mining, (mining means: guessing something by using Easy Maths),Lucky players maybe win amazing gifts like tiny Bitcoin";
+	
+	
+	newan.setAttribute("href",linkin);
+	
+var nextmile = document.getElementById("nextmile");	
+
+var chstat = document.getElementById("chstat");	
+var chal = document.getElementById("chal");
+chal.innerHTML=randmile;
+var chalmined = document.getElementById("minednum");
+
+chalmined.innerHTML=score;
+if(randmile <= score){
+
+chstat.innerHTML=" Awesome ! Challenge Fullfilled";
+
+
+				
+}
+
+
+var goodlinks = document.getElementById("goodlinks");
+
+var goodsname = document.getElementById("goodsname");
+var glinksarr=["https://amzn.to/3MrCNT8","https://amzn.to/3v88eMh","https://amzn.to/3kfjj7T","https://amzn.to/3xSizxI","https://amzn.to/3EKrnr1","https://amzn.to/3EMsJl6","https://amzn.to/3sbEhJB","https://amzn.to/3rOgxL6","https://amzn.to/3k6RIGb","https://amzn.to/3OxQzVX","https://amzn.to/3KelDqy","https://amzn.to/3MrDifY","https://amzn.to/3Mq03Rp","https://amzn.to/3LfZFVs","https://amzn.to/3vDp7xC","https://amzn.to/3vaNjbj","https://amzn.to/3vzceVa","https://amzn.to/3LcnCwP","https://amazon.in/shop/todaysq"];
+var gnamesarr=["Shoes","Watches","Books","Bags","Tshirts","Smartphones","Laptops","Beauty","Health","Water Bottles","Kids Toys","Nutrition","Personal Care","Skin Care","Tools & Accessories","School Bags","Footwear","Bestsellers Books","Everything"];
+var prizelen=(gnamesarr.length)-1;
+var randprizes = Math.floor(Math.random()*(prizelen-0+1))+0;
+
+var creatlinks = document.createElement("a");
+var linktextnode = document.createTextNode("Claim Your Gift");
+goodlinks.appendChild(creatlinks);
+creatlinks.appendChild(linktextnode);
+creatlinks.setAttribute("href",glinksarr[randprizes]);
+
+goodsname.innerHTML="Congrats You Got Huge Discounts in "+gnamesarr[randprizes]+" Category";
+
+							}
+				function showgame(){
+								setTimeout(closeup,1000*30); 
+							
+								var gamepage = document.getElementById("start");
+								gamepage.style.display="block";
+							 var timeuppage = document.getElementById("close");
+							 timeuppage.style.display="none"; 
+							 time=30;
+							 
+							 randmile = Math.floor(Math.random()*(300-100+1))+100;
+	var goalmine = document.getElementById("goalmine");	
+goalmine.innerHTML = randmile;
+				}
+							
+	  					
+function guessnow(){
+
+count=count+1;
+
+var given = document.getElementById("inputid").value;
+ var scorez = document.getElementById("scoress");
+			var correct= document.getElementById("start");				
+							var hint = document.getElementById("hints");
+var panball1=document.getElementById("panball1");
+var panball2=document.getElementById("panball2");
+var panball3=
+document.getElementById("panball3");
+panball1.style.background="#262626";
+panball2.style.background="#262626";
+panball3.style.background="#262626";
+
+				    if(rand < given && given!=""){
+				    				
+           
+				    			var 	tgreater=given-rand;
+				    			hint.innerHTML="Bigger than Z"	;	
+				    			hint.style.color="#1E90FF";
+				    		 panball1.style.background="#1E90FF";
+				    	
+				    }
+				
+				    else if(rand > given && given!=""){
+				    
+				       var tsmaller=rand-given;
+				    				hint.innerHTML="smaller than Z"	;	
+				    			 hint.style.color="#ffffff";
+				 panball2.style.background="#ffffff";
+				    }
+				    else if(rand == given && given!=""){
+				   
+				   hint.innerHTML="Correct! Number is : "+rand+".";	
+							hint.style.color="#BFFF00";		 
+							panball3.style.background="#BFFF00";
+							given.value ="0";
+				    	  
+				    												rand =         Math.floor(Math.random()*20);
+				    												given.value=20;
+				    												score=score+1;
+				    					var scored = document.getElementById("scored");
+				    					scored.innerHTML=score;
+																	
+												scorez.innerHTML=score;
+var finalscore = document.getElementById("finalscore");
+finalscore.innerHTML=score*20;
+var bonus = document.getElementById("bonuspoints");
+var finalpoints = document.getElementById("totpoints");
+var minper = document.getElementById("minper");
+var minerrank = document.getElementById("minerrank");
+var rangepop = document.getElementById("rpop");
+var bitearn = document.getElementById("bitearn");
+var bitcoined=bitcoin/75;
+var usdollar = bitcoined.toFixed(2);
+var coined= document.getElementById("coinearn");
+coined.innerHTML=usdollar+" USD";
+var usdbtc = document.getElementById("usdbtc");
+usdbtc.innerHTML=usdollar/4000000+" BTC";
+var feedgiv = document.getElementById("feedgiv");
+if(score==1){
+  bonused=10;
+  totalpoints=score*20+bonused;
+  minperform = score*totalpoints;
+  minrank = "Bronze";
+  rpop = "1x fast";
+  bitearning =score/100;
+  bitcoin =bitearning ;
+  feedgiv.innerHTML=" Good Try ! ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=2){
+		bonused=50;
+  totalpoints=score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "Bronze plus";
+  rpop="2x fast";
+  bitearning =score/100;
+  bitcoin = bitearning ;
+  feedgiv.innerHTML=" nice! keep it on.";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;	
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=3){
+  bonused=100;
+  totalpoints=score*20+bonused;
+  minperform = totalpoints*score;
+  minrank ="Silver";
+  rpop="3x fast";
+  bitearning =score/100;
+  bitcoin =bitearning ;
+  feedgiv.innerHTML=" well try! ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=4){
+		bonused=150;
+  totalpoints=score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "Gold";
+  rpop="4x fast";
+  bitearning =score/100;
+  bitcoin =bitearning  ;
+  feedgiv.innerHTML=" Well Done ! ! ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=5){
+				
+		bonused=200;
+  totalpoints=score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "Platinum";
+  rpop="5x fast";
+  bitearning =score/100;
+  bitcoin = bitearning ;
+  feedgiv.innerHTML=" awesome ! ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=100){
+				
+		bonused=250;
+  totalpoints=score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "Silver plus";
+  rpop="6x fast";
+  bitearning =score/100;
+  bitcoin =bitearning ;
+  feedgiv.innerHTML=" Wow! wonderful performance. ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=200){
+			
+		bonused=300;
+  totalpoints=score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "Gold plus";
+  rpop="7x fast";
+  bitearning =score/100;
+  bitcoin =bitearning  ;
+  feedgiv.innerHTML=" Amazing! Sunny performance. ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=300){
+				
+		bonused=350;
+  totalpoints=score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "Platinum plus";
+  rpop="8x fast";
+  bitearning =score/100;
+  bitcoin =bitearning ;
+  feedgiv.innerHTML=" Wow! Honey performance  ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=400){
+				
+		bonused=400;
+  totalpoints=score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "silver++ ";
+  rpop="9x fast";
+  bitearning =score/100;
+  bitcoin =bitearning  ;
+  feedgiv.innerHTML=" Great performance ! ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=500){
+		bonused=450;
+  totalpoints=score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "Gold++";
+  rpop="10x fast";
+  bitearning =score/100;
+  bitcoin =bitearning ;
+  feedgiv.innerHTML=" Wonderful! Hot performance ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=600){
+				
+		bonused=500;
+  totalpoints= score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "platinum++";
+  rpop="100X fast";
+  bitearning =score/100;
+  bitcoin =bitearning ;
+  feedgiv.innerHTML=" Very Awesome! ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=700){
+				
+		bonused=1000;
+  totalpoints= score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "5X silver";
+  rpop="1000X fast";
+  bitearning =score/100;
+  bitcoin =bitearning  ;
+  feedgiv.innerHTML=" Very well played! 1000x fast";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}
+else if(score<=800){
+		
+		bonused=10000;
+  totalpoints= score*20+bonused;
+  minperform = totalpoints*13;
+  minrank = "5X Gold";
+  rpop="10000X fast";
+  bitearning =score/100;
+  bitcoin =bitearning ;
+  feedgiv.innerHTML=" Very Good ! Gold performance ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}	
+else if(score<=900){
+		bonused=50000;
+  totalpoints= score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "5X platinum";
+  rpop="1MX fast";
+  bitearning =score/100;
+  bitcoin =bitearning ;
+	 feedgiv.innerHTML=" Beautiful! Great miner ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+				
+}									
+else if(score>1000){
+				
+		bonused=100000;
+  totalpoints= score*20+bonused;
+  minperform = totalpoints*score;
+  minrank = "Diamond";
+  rpop="100MX fast";
+  bitearning =score/100;
+  bitcoin =bitearning ;
+	 feedgiv.innerHTML=" So, Amazing ! You got Diamond  ";
+		bonus.innerHTML=bonused;	
+		finalpoints.innerHTML = totalpoints;
+		minper.innerHTML=minperform;
+		minerrank.innerHTML=minrank;
+		rangepop.innerHTML=rpop;
+		bitearn.innerHTML=bitcoin;
+}										
+											
+				   
+				  } 
+var rangein = document.getElementById("rangein");
+	var randis;
+if(rand<=5 ){
+randis = Math.floor(Math.random()*(5-0+1))+0;
+		rangein.innerHTML="0 to 5";		
+	}
+else if(rand>=6 && rand<=10){
+randis = Math.floor(Math.random()*(10-6+1))+6;
+	 rangein.innerHTML="6 to 10";			
+}
+else if(rand>=11 && rand<=15){
+randis = Math.floor(Math.random()*(15-11+1))+11;
+		rangein.innerHTML="11 to 15";		
+}
+else if(rand>=16 && rand<=20){
+randis = Math.floor(Math.random()*(20-16+1))+16;
+	 rangein.innerHTML="16 to 20";	
+}
+if(auto==1){
+var innum = document.getElementById("inputid");		
+innum.value=randis;
+}
+							}
+							var time =30;
+							function clock(){
+							 
+							 time = time-1;
+							 	document.getElementById("timer").innerHTML=": "+time;	
+	
+		}
+		
+		
+		function getsubscribed(){
+						
+				let getform = document.getElementsByClassName("signuptosee")[0];		
+		getform.style.display="block";
+		let prevpage = document.getElementById("close");		
+		prevpage.style.display="none";
+		
+		}
+	function aftersub(){
+					let getform = document.getElementsByClassName("signuptosee")[0];		
+		getform.style.display="none";
+		let prevpage = document.getElementById("close");		
+		prevpage.style.display="block";
+	}	
+	var numshared=0;
+	function gotohead(){
+	
+	numshared=numshared+1;
+var sharesum =    document.getElementById("sharesum");
+sharesum.innerHTML=numshared;
+
+	
+	let sharecount = document.getElementsByClassName("sharecount")[0];
+	
+sharecount.value=numshared;
+			if(numshared==10){
+			let stopthem = document.getElementsByClassName("stopthem")[0];
+			stopthem.style.display="none";
+			let close = document.getElementById("close");
+			close.style.display ="block";
+			}
+	}
+	
+	
+	function dashed(){
+	let phex =101010;
+	let phexinput = document.getElementById("phex").value;
+		if(phexinput==phex){
+			let stopthem = document.getElementsByClassName("stopthem")[0];
+			stopthem.style.display="none";
+			let close = document.getElementById("close");
+			close.style.display ="block";			
+	}
+	
+	}
+	
+		function activemens(){
+var amensbox = document.getElementById("actplay");				
+var randmens=
+Math.floor(Math.random()*(6500-11500+1))+6500;
+amensbox.innerHTML= randmens;
+		}
+		
+		function rewinner(){
+let wincard =document.getElementsByClassName("wincard")[0];
+wincard.style.animation="zoop 1s ease infinite";
+let winlist = document.getElementById("winmanname");				
+let rewin = document.getElementById("winman");		
+let emlist=document.getElementById("emojiforu");
+
+let winmoji = ["🐼","😇","🦊","🤥","😘","🐰","⛄","🌻","😊","😯","😍","😮","😲","☺️","🙄","🙁l😍","🤔","🤗","🤗","😂","😆","😊","😘","😃","💪","💰","🏆","😶","😅","🤣","😙","😘","😍","😛","😇","🙄","🤔","😵","🤠","🤓","🙊","🐯","🐸","🤓","🤠","🍏","💪","👋","😍","🐼","😊"];
+let winners = ["Babita","Sandhya","Shruti","Nikita","Balaji","Nitesh","Kishu","Rushi","karan","Neha","Madhuri","Roshani","Manisha","Vaisha","Dhiraj","Pawan","Akshay","Ankesh","sunita","Neymar","Edison","Aaru","Adinath","Sarthak","shubham","Mayuri","Jasmin","Lisa","Krishana","Siddu","Mukesh","Kriti"];
+let arrwin =["Got Magazine subscription 💌 Free","Got $100 shopping Voucher 🛍️💰","Won very big Discount on Ebooks 🙌","Won $10 shopping voucher 💳","Got $10 USD 💵","Won 0.0004 Bitcoin  ($)","Won Big Shopping Discount🛍️","Won Today's Q subscription free 🆓","Won Crypto currency 💵","Won Big Discount💰","Won Discount on awesome T-shirts 👕","Won Discount on shoes 👟","Got Huge Discount on Healthy products 💪","Got Awesome Discount on Watches ⌚ ","Won Big Discount on bags👜","Won Awesome Discount on books 📚","Won $74 USD","Won $20 USD","Winner of Amazon shopping Voucher 🛍️💳" ];
+
+let lenarr=(winners.length)-1;
+let lenarrmoji=(winmoji.length)-1;
+
+let randwin=
+Math.floor(Math.random()*(5-0+1))+0;
+
+let ranwin=
+Math.floor(Math.random()*(lenarr-0+1))+0;
+
+let ranwinmoji=
+Math.floor(Math.random()*(lenarrmoji - 0 + 1))+0;
+
+rewin.innerHTML=arrwin[randwin];
+winlist.innerHTML=winners[ranwin];
+emlist.innerHTML=winmoji[ranwinmoji];
+
+		}
+	
+		setInterval(activemens,100);	
+		setInterval(rewinner,1000);			
+		setInterval(clock,1000);
+				</script>
+</body>
+</html>
