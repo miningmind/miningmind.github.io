@@ -497,6 +497,58 @@ display:inline;
 				animation:shakeit 0.5s 1s ease infinite alternate;
 } 
 
+#posttravel{
+				display:none;
+				background:radial-gradient(circle farthest-corner at -98% -50% ,lime,yellow, rgba(255,140,0,0.4),#374f4d,#21302f,black);
+}
+.posttask{
+    height:100vh;
+				width:100%;
+				padding:20px;
+				color:white;
+				background:none;
+				overflow:auto;
+}
+.folsteps{
+				display:flex;
+				flex-wrap:wrap;
+				justify-content: space-evenly;
+				align-items:left;
+				padding:8px;
+				background:none;
+			
+}
+.folsteps div{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+				height:auto;
+				width:300px;
+				height:200px;
+				margin:12px;
+				padding:12px;
+				border-radius:8px;
+				background:white;
+		  color:black;	
+		  font-weight:bold;	
+}
+.sumeqbox{
+				display:flex;
+				flex-direction:row;
+    font-size:24px; 
+    boder:dashed 1px lime; 
+}
+#counteq{
+				width:80px;
+				border:solid 1px dodgerblue;
+			 padding:4px;
+			 background:none;
+}
+.luckhead{
+			color:dodgerblue;
+			
+}
 @keyframes zoop{
 				0%{transform: translateY(30%) ; opacity: 0.5;}
 				100%{transform: translateY(0%); opacity: 1;}
@@ -816,6 +868,39 @@ display:inline;
 		
 </div>
 </div>	
+<div id="posttravel">
+			<div class="posttask">
+			<div >
+<h2>To Join in this LuckyDraw You have to solve one puzzle.</h2>
+<p>Follow the following steps to solve puzzle</p>
+			</div>
+			<div class="folsteps">
+			<div>
+							<p class="luckhead">Step 1 : Count post.</p>
+							<p><a href="https://bit.ly/CountBlogPost">Open Blog & Count post</a></p>
+							
+			</div>
+			<div>
+					<p class="luckhead">Step 2 : Solve equation.</p>
+					<p class="sumeqbox">
+									<span>Sum = <input type="number" id="counteq" placeholder ="Enter count" oninput="eqcal()"> +  </span> <span id="eqrandomnum"></span>
+									</p>
+					<p><span id="sumeq"></span></p>
+					<p><small id="eqstatus"></small></p>
+			</div>
+			<div>
+					<p class="luckhead">LuckyDraw Joining Status</p>
+					<p id="msgeq">Yet Not Joined</p>
+			</div>
+			<div>
+							<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf2v4uAd4dB3uYAChKTMLhsLhb-p9fhLf_f-Yb4-oAjVBZ6ZA/viewform?embedded=true" width="200" height="200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+	</div>
+							<div>
+							<button onclick="luckygoback()" class="buty">Back</button>
+			</div>
+			</div>
+			
+	</div>
 				
 				<script>
 var bonused = 0;
@@ -830,7 +915,9 @@ var score=0;
 var rand = 20; 
 var scoregot=guessnow();
 var randmile;
-
+setInterval(activemens,100);
+setInterval(rewinner,1000);			
+setInterval(clock,1000);
 var elem = document.documentElement;
 function openFullscreen() {
   if (elem.requestFullscreen) {
@@ -1376,9 +1463,48 @@ emlist.innerHTML=winmoji[ranwinmoji];
 
 		}
 	
-		setInterval(activemens,100);	
-		setInterval(rewinner,1000);			
-		setInterval(clock,1000);
+	var eqrandomnum=0;
+	function randomluckynum(){
+					eqrandomnum= Math.floor(Math.random()*(10-1+1))+1;
+					document.getElementById("eqrandomnum").innerHTML=eqrandomnum;
+					
+	}
+	function luckyblog(){
+		let posttravel = document.getElementById("posttravel");	
+		posttravel.style.display="block";
+		let closebox = document.getElementById("close");
+		closebox.style.display="none";
+		
+randomluckynum();
+	console.log(eqrandomnum);
+	
+	}
+	function luckygoback(){
+					let posttravel = document.getElementById("posttravel");	
+		posttravel.style.display="none";
+		let closebox = document.getElementById("close");
+		closebox.style.display="block";
+	}
+	
+function eqcal(){
+console.log(eqrandomnum);
+let eqstatus = document.getElementById("msgeq");	
+let counteq = document.getElementById("counteq").value;	
+
+let eqsum = parseInt(counteq) + eqrandomnum;
+let eqpostcount=30+30+10+3;
+let eqsumbox = document.getElementById("sumeq");
+if(counteq==eqpostcount){
+
+eqsumbox.innerHTML="👍 Well done solved , result is "+eqsum;	
+			eqstatus.innerHTML="🎉 congratulations ! You successfully Joined Luckydraw!";
+}
+else{
+  eqsumbox.innerHTML="🤓 Blog post count is wrong, Enter correct count.";
+		eqstatus.innerHTML="🤔 You can't join! because post count is wrong , open blog again and count the post.";		
+}
+	}
+		
 				</script>
 </body>
 </html>
