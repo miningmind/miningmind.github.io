@@ -931,13 +931,28 @@ function openFullscreen() {
   }
   }
 
-for(i=0;i<=1;i++){
-var shared10 = document.getElementsByClassName("shared10");
+function addshare(){
+var linkin ="whatsapp://send?text=Hi, I am sharing with you a logical Mind Mining game, Help you to develop your logical skills........Here is my performance....            |Mined Numbers : "+ score+" | Point Earned :"+totalpoints+"| Miner Performance :"+minperform+" | Miner Medal :"+minrank+" | Logical Intensity:"+rpop+"| awesome ! play now. Learn how cryptocurrency mining works. You can Automate mining, (mining means: guessing something by using Easy Maths),Lucky players maybe win amazing gifts like tiny Bitcoin";
+	
+	
+for(var c=0;c<2;c++){
+var shared10 = document.getElementsByClassName("shared10")[c];
 var newan = document.createElement("a");
 newan.setAttribute("data-action","share/whatsapp/share");
+newan.setAttribute("href",linkin);
 var hrlink = document.createTextNode("Share on WhatsApp");
 newan.appendChild(hrlink);
-shared10[i].appendChild(newan);
+shared10.appendChild(newan);
+}
+
+}
+function remshare(){
+				for(var k=0;k<2;k++){
+var shared10 = document.getElementsByClassName("shared10")[k];
+while (shared10.hasChildNodes()) {
+  shared10.removeChild(shared10.firstChild);
+}
+}
 }
 var autostart= setInterval(guessnow,100);
 
@@ -964,7 +979,8 @@ var autostart= setInterval(guessnow,100);
         var goodlinks = document.getElementById("goodlinks");
 while (goodlinks.hasChildNodes()) {
   goodlinks.removeChild(goodlinks.firstChild);
-}					
+}	
+remshare();				
         }
        
 								function getstart(){
@@ -989,11 +1005,7 @@ while (goodlinks.hasChildNodes()) {
 										closepage.style.display="block";
 										
 									  time=30;
-	var linkin ="whatsapp://send?text=Play and Earn Rewards. Play here : https://bit.ly/miningmind | Hi, I am sharing with you a logical Mining Mind game, Guess numbers and Earn Amazing Rewards like Shopping Vouchers,Huge Discounts, Magazine Subscriptions, Cryptocurrency. Help you to develop your logical skills........Here is my performance...|Mined Numbers : "+ score+" | Point Earned :"+totalpoints+"| Miner Performance :"+minperform+" | Miner Medal :"+minrank+" | Logical Intensity:"+rpop+"| awesome ! play now. Learn how cryptocurrency mining works. You can Automate mining, (mining means: guessing something by using Easy Maths),Lucky players maybe win amazing gifts like tiny Bitcoin.";
-	
-	
-	newan.setAttribute("href",linkin);
-	
+	addshare();
 var nextmile = document.getElementById("nextmile");	
 
 var chstat = document.getElementById("chstat");	
@@ -1043,7 +1055,8 @@ goalmine.innerHTML = randmile;
 var goodlinks = document.getElementById("goodlinks");
 while (goodlinks.hasChildNodes()) {
   goodlinks.removeChild(goodlinks.firstChild);
-}	
+}
+remshare();	
 				}
 							
 	  					
