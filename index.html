@@ -625,7 +625,7 @@ display:inline;
 								 							<div class="ensec2"><div class="ensec4"><p class="enopt">4</p><p>keep note of <b> Numbers Range ,</b> eg: "1 to 10"</p></div></div>
 								 							
 								 					<div class="ensec2">	<div class="ensec4"><p class="enopt">5</p><p>If you want mine numbers automatically ,take help of <b> Auto miner </b></p></div>	</div>
-								 							
+								 					<div class="ensec2">	<div class="ensec4"><p>Terms and conditions</p><i>By clicking on play button you agree our terms  & conditions.</i><p> <u onclick="tandc()">see t&c</u></p></div></div>		
 								 				
 								 				</div>
 								 				</div>
@@ -970,6 +970,11 @@ var autostart= setInterval(guessnow,100);
           setInterval(guessnow,100)
          	
         }
+function tandc(){
+        				
+        				alert("Mining mind is a game which offers rewards for mining numbers. Before playing this game you should agree following terms and conditions:1] We doesn't guarantee always you get a rewards,2] rewards are distributed randomly and automatically.3] rewards contains Magazine Subscriptions, Discounts and promotional offers, rewards maybe contains promotional links.4] You can play this game for entertainment purpose, 5] We doesn't accept any financial transactions, When you start playing this game we consider that you agree our Terms and conditions.");
+        }
+
         function gohome(){
         			var timeuppage = document.getElementById("close");
 							 timeuppage.style.display="none"; 	
