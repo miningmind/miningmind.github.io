@@ -960,7 +960,10 @@ var autostart= setInterval(guessnow,100);
         			var enpage = document.getElementById("entrypg");
 												enpage.style.display="block";	
 												
-        				
+        var goodlinks = document.getElementById("goodlinks");
+while (goodlinks.hasChildNodes()) {
+  goodlinks.removeChild(goodlinks.firstChild);
+}					
         }
        
 								function getstart(){
@@ -1022,7 +1025,7 @@ creatlinks.appendChild(linktextnode);
 creatlinks.setAttribute("href",glinksarr[randprizes]);
 
 goodsname.innerHTML="Congrats You Got Huge Discounts in "+gnamesarr[randprizes]+" Category";
-
+	
 							}
 				function showgame(){
 								setTimeout(closeup,1000*30); 
@@ -1036,6 +1039,10 @@ goodsname.innerHTML="Congrats You Got Huge Discounts in "+gnamesarr[randprizes]+
 							 randmile = Math.floor(Math.random()*(300-100+1))+100;
 	var goalmine = document.getElementById("goalmine");	
 goalmine.innerHTML = randmile;
+var goodlinks = document.getElementById("goodlinks");
+while (goodlinks.hasChildNodes()) {
+  goodlinks.removeChild(goodlinks.firstChild);
+}	
 				}
 							
 	  					
