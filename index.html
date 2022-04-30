@@ -549,6 +549,30 @@ display:inline;
 			color:orange;
 			
 }
+.moneybox{
+				position:fixed;
+				bottom:0;
+				left:50%;
+				z-index:5;
+}
+.moneybox span{
+    
+				position: absolute;
+				animation:coinscome 1.5s ease;
+				transform-origin:bottom left;
+				background:rgba(247, 226, 87,0.6);
+				border-radius:8px;
+				padding:1em;
+				color:#000000;
+				font-weight:bold;
+				border: solid 1px #f7e257;
+			 
+	
+}
+@keyframes coinscome{
+				0%{ transform: translateY(0vh)  scale(0.5);opacity:0;}
+				100%{transform:translateY(-50vh) scale(3) rotate(360deg);opacity:1;}
+}
 @keyframes zoop{
 				0%{transform: translateY(30%) ; opacity: 0.5;}
 				100%{transform: translateY(0%); opacity: 1;}
@@ -634,6 +658,8 @@ display:inline;
 								</div>
 				</div>
 				<div>
+<div class="moneybox">	
+    </div>
 				<div id="start">
 			
 			<div class="upflex">
@@ -1080,6 +1106,7 @@ document.getElementById("panball3");
 panball1.style.background="#262626";
 panball2.style.background="#262626";
 panball3.style.background="#262626";
+var moneybox = document.getElementsByClassName("moneybox")[0];
 
 				    if(rand < given && given!=""){
 				    				
@@ -1105,7 +1132,10 @@ panball3.style.background="#262626";
 							panball3.style.background="#BFFF00";
 							given.value ="0";
 				    	  
-				    												rand =         Math.floor(Math.random()*20);
+				    			var newcoin = document.createElement("span");  
+		var cointext=document.createTextNode(given+"💸"); 
+newcoin.appendChild(cointext);
+moneybox.appendChild(newcoin);									rand =         Math.floor(Math.random()*20);
 				    												given.value=20;
 				    												score=score+1;
 				    					var scored = document.getElementById("scored");
