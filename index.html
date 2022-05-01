@@ -558,7 +558,7 @@ display:inline;
 .moneybox span{
     
 				position: absolute;
-				animation:coinscome 1.5s ease;
+				animation:coinscome 1s ease;
 				transform-origin:bottom left;
 				background:rgba(247, 226, 87,0.6);
 				border-radius:8px;
@@ -947,6 +947,28 @@ var score=0;
 var rand = 20; 
 var scoregot=guessnow();
 var randmile;
+var coinSound =new sound("https://docs.google.com/uc?export=download&id=1L8zVl3PX4hGWY3h3w9LR_VGyHJuhnDiu");
+var inputsound=new sound("https://docs.google.com/uc?export=download&id=1MzJvBwYHQF80vmlFusbj8WG43lUwOxnQ");
+var timeupsound=new sound("https://docs.google.com/uc?export=download&id=1Law73Ezb9C7pjuAdhShWO0c6MObvEOiB");
+var resultsound=new sound("https://docs.google.com/uc?export=download&id=1L_47JW5YMPjEn8eytYUxQ6bN1Bjz947y");
+var backgroundsound=new sound("https://docs.google.com/uc?export=download&id=1NRtVu3ic4dYKXIgbpjvDodHNYKDegwLN");
+
+var butybutton = document.getElementsByClassName("buty");
+var butysound = new sound("https://docs.google.com/uc?export=download&id=1MIs-FSRmrLQhTWYiVlnEKYF-K4PBudFO");
+
+for(var n = 0; n < butybutton.length;n++){
+
+butybutton[n].addEventListener("click",function(){
+butysound.currentTime=0;
+butysound.play();
+});
+}
+var inele = document.getElementById("inputid");
+inele.addEventListener("input",function(){
+inputsound.currentTime=0;
+inputsound.play();
+});
+
 setInterval(activemens,100);
 setInterval(rewinner,1000);			
 setInterval(clock,1000);
@@ -956,7 +978,20 @@ function openFullscreen() {
     elem.requestFullscreen();
   }
   }
-
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.play = function(){
+    this.sound.play();
+  }
+  this.stop = function(){
+    this.sound.pause();
+  }
+}
 function addshare(){
 var linkin ="whatsapp://send?text=Hi, I am sharing with you a logical Mind Mining game, Help you to develop your logical skills........Here is my performance....            |Mined Numbers : "+ score+" | Point Earned :"+totalpoints+"| Miner Performance :"+minperform+" | Miner Medal :"+minrank+" | Logical Intensity:"+rpop+"| awesome ! play now. Learn how cryptocurrency mining works. You can Automate mining, (mining means: guessing something by using Easy Maths),Lucky players maybe win amazing gifts like tiny Bitcoin";
 	
@@ -1022,6 +1057,7 @@ remshare();
 												var enpage = document.getElementById("entrypg");
 												enpage.style.display="none";
 												score=0;
+backgroundsound.play();
 												time=30;
 	 
 		openFullscreen();
@@ -1034,7 +1070,8 @@ remshare();
 										startpage.style.display="none";
 										var closepage=document.getElementsByClassName("stopthem")[0];
 										closepage.style.display="block";
-										
+																		timeupsound.currentTime =0;
+		timeupsound.play();								
 									  time=30;
 	addshare();
 var nextmile = document.getElementById("nextmile");	
@@ -1079,7 +1116,7 @@ goodsname.innerHTML="Congrats You Got Huge Discounts in "+gnamesarr[randprizes]+
 							 var timeuppage = document.getElementById("close");
 							 timeuppage.style.display="none"; 
 							 time=30;
-							 
+							 backgroundsound.play();
 							 randmile = Math.floor(Math.random()*(300-100+1))+100;
 	var goalmine = document.getElementById("goalmine");	
 goalmine.innerHTML = randmile;
@@ -1131,7 +1168,8 @@ var moneybox = document.getElementsByClassName("moneybox")[0];
 							hint.style.color="#BFFF00";		 
 							panball3.style.background="#BFFF00";
 							given.value ="0";
-				    	  
+				    	                coinSound.currentTime =0;	
+                                                        coinSound.play();
 				    			var newcoin = document.createElement("span");  
 		var cointext=document.createTextNode(given+"💸"); 
 newcoin.appendChild(cointext);
@@ -1477,6 +1515,8 @@ sharecount.value=numshared;
 	
 	
 	function dashed(){
+        resultsound.currentTime =0;
+        resultsound.play();
 	let phex =101010;
 	let phexinput = document.getElementById("phex").value;
 		if(phexinput==phex){
