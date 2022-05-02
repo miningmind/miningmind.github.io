@@ -973,11 +973,7 @@ setInterval(activemens,100);
 setInterval(rewinner,1000);			
 setInterval(clock,1000);
 var elem = document.documentElement;
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  }
-  }
+
 function sound(src) {
   this.sound = document.createElement("audio");
   this.sound.src = src;
@@ -1515,11 +1511,12 @@ sharecount.value=numshared;
 	
 	
 	function dashed(){
-        resultsound.currentTime =0;
-        resultsound.play();
+        
 	let phex =101010;
 	let phexinput = document.getElementById("phex").value;
 		if(phexinput==phex){
+                        resultsound.currentTime =0;
+                        resultsound.play();
 			let stopthem = document.getElementsByClassName("stopthem")[0];
 			stopthem.style.display="none";
 			let close = document.getElementById("close");
